@@ -1,0 +1,17 @@
+---
+interface Props {
+	id: string;
+	number: string;
+	eyebrow: string;
+	title: string;
+}
+
+const { id, number, eyebrow, title } = Astro.props;
+---
+
+<section class="profile-section" id={id} aria-labelledby={`${id}-title`}>
+	<span class="field-index">{number} / 03</span>
+	<p class="field-label">{eyebrow}</p>
+	<h2 id={`${id}-title`}>{title}</h2>
+	<div class="section-content"><slot /></div>
+</section>
